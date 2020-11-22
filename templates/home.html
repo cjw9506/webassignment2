@@ -31,10 +31,19 @@
         </div>
         <div class="col-md-1 form-group">
           <br />
-          <button class="btn btn-success">Submit</button>
+          <button class="btn btn-success" formmethod="POST">Submit</button> <!-- post 추가 -->
         </div>
-      </div>
-      <textarea rows="8"></textarea>
+      </div> <!-- textarea 추가 -->
+      <p><textarea rows="8" cols="100" placeholder="read only" readonly>
+이수 구분 : {{gubun}}
+
+학년 : {{group}}
+
+학과 : {{stu_dept}}
+
+이름 : {{stu_name}}
+
+      </textarea></p>
     </div>
   </form>
 </div>

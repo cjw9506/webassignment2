@@ -11,18 +11,24 @@ from flask import url_for
 from flask import session
 
 import dbconfig
-from dbhelper import DBHelper
+#from dbhelper import DBHelper
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'x6vGZrpUtoMGo+T+uFrkxQ9DLh7F8qSM'
 
-DB = DBHelper()
+#DB = DBHelper()
 
 @app.route("/", methods=['GET','POST'])
 def home():
     #session.clear()
-
+    gubun = request.form.get('gubun')
+    group = request.form.get('group')
+    stu_dept = request.form.get('stu_dept')
+    stu_name = request.form.get('stu_name')
+        
     return render_template("home.html")
+    
+
 
 @app.route("/listprice", methods=['GET','POST'])
 def listprice():
