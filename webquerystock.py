@@ -25,8 +25,10 @@ def home():
     group = request.form.get('group')
     stu_dept = request.form.get('stu_dept')
     stu_name = request.form.get('stu_name')
-        
-    return render_template("home.html")
+    queryObj = {'gubun':gubun, 'gubun':group, 'stu_dept':stu_dept, 'stu_name':stu_name}
+    print ('queryObj=', queryObj)
+    session['queryObj'] = queryObj
+    return redirect(url_for('home'))
     
 
 
